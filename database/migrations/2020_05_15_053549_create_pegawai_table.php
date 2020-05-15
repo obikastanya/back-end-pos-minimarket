@@ -19,6 +19,8 @@ class CreatePegawaiTable extends Migration
             $table->date('tgl_lahir');
             $table->string('jenis_kelamin', 50);
             $table->date('hire_date');
+            $table->string('alamat', 100);
+            $table->decimal('gaji', 9,2);
             $table->char('no_telp', 20);
             $table->timestamps();
         });
