@@ -13,6 +13,7 @@ class BarangController extends Controller {
     }
     public function inputBarang(Request $request){
         $barang = new Barang;
+        $barang->nama_barang= $request->nama_barang;
         $barang->id_jenis_barang= $request->id_jenis_barang;
         $barang->id_supplier=$request->id_supplier;
         $barang->harga_jual=$request->harga_jual;
@@ -27,7 +28,10 @@ class BarangController extends Controller {
         return "berhasil dihapus";
     }
     public function updateBarang(Request $request){
-        Barang::where('id', $request->id_barang)->update([
+
+        $barang = Barang::FindOrFail($request->id);
+        $barang->update([
+            'nama_barang'=>$request->nama_barang,
             'id_jenis_barang'=> $request->id_jenis_barang,
             'id_supplier'=> $request->id_supplier,
             'harga_jual'=> $request->harga_jual,

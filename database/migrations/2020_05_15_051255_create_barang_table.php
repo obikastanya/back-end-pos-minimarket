@@ -15,6 +15,7 @@ class CreateBarangTable extends Migration
     {
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
+            $table->char('nama_barang', 100);
             $table->char('id_jenis_barang', 50);
             $table->char('id_supplier', 50);
             $table->decimal('harga_jual', 19,2);
