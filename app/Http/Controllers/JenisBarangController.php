@@ -22,10 +22,15 @@ class JenisBarangController extends Controller {
         return "Berhasil dihapus";
     }
     public function updateJenisBarang(Request $request){
-        JenisBarang::where('id', $request->id_jenis_barang)->update([
+        $barang = JenisBarang::findOrFail($request->id_jenis_barang); 
+        $barang->update([
             'nama_jenis_barang'=> $request->nama_jenis_barang
         ]);
         return "Berhasil";
+    }
+    public function options(){
+        $jenis=JenisBarang::select('nama_jenis_barang', 'id')->get();
+        return $jenis;
     }
 }
 

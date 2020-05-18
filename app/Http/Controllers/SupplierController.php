@@ -9,6 +9,7 @@ class SupplierController extends Controller {
         $data= Supplier::all();
         return $data;
     }
+
     public function inputSupplier(Request $request){
         $supplier = new Supplier;
         $supplier->nama_supplier=$request->nama_supplier;
@@ -31,6 +32,9 @@ class SupplierController extends Controller {
             'no_telp'=>         $request->no_telp
         ]);
         return "berhasil";
+    }
+    public function options(){
+        return Supplier::select('id', 'nama_supplier')->get();
     }
 }
 

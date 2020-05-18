@@ -16,15 +16,16 @@ $router->get('/', function () use ($router) {
 });
 // Barang
 $router->get('/get-barang', 'BarangController@index');
-$router->post('/input-stock', 'BarangController@inputBarang');
-$router->delete('/delete-stock/{id}', 'BarangController@deleteBarang');
-$router->post('/update-stock', 'BarangController@updateBarang');
+$router->post('/input-barang', 'BarangController@inputBarang');
+$router->delete('/delete-barang/{id}', 'BarangController@deleteBarang');
+$router->post('/update-barang', 'BarangController@updateBarang');
 
 // Jenis Barang
 $router->get('/get-jenis-barang', 'JenisBarangController@index');
 $router->post('/input-jenis-barang', 'JenisBarangController@inputJenisBarang');
 $router->delete('/delete-jenis-barang/{id}', 'JenisBarangController@deleteJenisBarang');
 $router->post('/update-jenis-barang', 'JenisBarangController@updateJenisBarang');
+$router->get('/jenis-barang-options', 'JenisBarangController@options');
 
 // Pegawai
 $router->get('/get-pegawai', 'PegawaiController@index');
@@ -38,3 +39,4 @@ $router->get('/get-supplier', 'SupplierController@index');
 $router->post('/input-supplier', 'SupplierController@inputSupplier');
 $router->delete('/delete-supplier/{id}', 'SupplierController@deleteSupplier');
 $router->post('/update-supplier', 'SupplierController@updateSupplier');
+$router->get('/supplier-options', 'SupplierController@options');
