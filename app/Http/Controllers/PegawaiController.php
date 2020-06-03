@@ -21,7 +21,7 @@ class PegawaiController extends Controller {
         $pegawai->gaji=$request->gaji;
         $pegawai->no_telp=$request->no_telp;
         $pegawai->save();
-        return "Data berhasil diinput";
+        return  response("Data berhasil diinput");
     }
     public function deletepegawai($id){
         $pegawai = Pegawai::findOrFail($id);
